@@ -11,9 +11,8 @@ export default class RateButton extends React.Component {
 
   onClick = () => {
     if (this.state.rated) return;
-
     fetch('/rate-article')
-      .then(resp => resp.JSON())
+      .then(resp => resp.json())
       .then((data) => {
         if (data.success) {
           this.setState({
