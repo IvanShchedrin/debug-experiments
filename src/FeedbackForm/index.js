@@ -24,7 +24,7 @@ export default class FeedbackForm extends React.Component {
     const textarea = e.currentTarget['feedback-textarea'];
     const content = textarea.value;
 
-    /*e.preventDefault();*/
+    e.preventDefault();
     
     fetch('/suggest-news', {
       method: 'PUT',
