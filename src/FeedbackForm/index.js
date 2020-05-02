@@ -29,7 +29,7 @@ export default class FeedbackForm extends React.Component {
     fetch('/suggest-news', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ text: content }),
     })
       .then(resp => resp.json())
       .then((data) => {
