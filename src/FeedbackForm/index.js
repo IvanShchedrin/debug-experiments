@@ -25,13 +25,11 @@ export default class FeedbackForm extends React.Component {
     const content = textarea.value;
 
     e.preventDefault();
-
     fetch('/suggest-news', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
-    })
-      .then(resp => resp.json())
+      body: JSON.stringify({text:content}),
+    }).then(resp => resp.json())
       .then((data) => {
         this.setState({
           postResult: data.success ? 'success' : 'error',
