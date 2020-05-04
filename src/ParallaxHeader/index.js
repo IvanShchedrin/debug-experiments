@@ -30,8 +30,8 @@ class ParallaxHeader extends React.PureComponent {
     // freeze(300);
   };
 
-  onArrowClick = () => {
-    document.querySelector('#scroll-to-anchor').scrollIntoView({
+  onArrowClick () {
+    document.querySelector('.scroll-to-anchor').scrollIntoView({
       behavior: 'smooth',
     })
   };
