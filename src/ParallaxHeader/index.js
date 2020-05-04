@@ -31,7 +31,7 @@ class ParallaxHeader extends React.PureComponent {
   };
 
   onArrowClick = () => {
-    /* Неверный селектор. Нужно искать id, а не class */
+    /* Неверный селектор. Нужно искать class, а не id */
     document.querySelector('.scroll-to-anchor').scrollIntoView({
       behavior: 'smooth',
     })
