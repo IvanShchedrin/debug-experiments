@@ -15,7 +15,6 @@ export default class FeedbackForm extends React.Component {
   };
 
   onChange = (event) => {
-    debugger
     this.setState({
       text: clearText(event.currentTarget.value),
     });
