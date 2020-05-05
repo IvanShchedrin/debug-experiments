@@ -18,6 +18,7 @@ export default class FeedbackForm extends React.Component {
     this.setState({
       text: clearText(event.currentTarget.value),
     });
+
   };
 
   onSubmit = (e) => {
@@ -56,7 +57,7 @@ export default class FeedbackForm extends React.Component {
         )}
         {postResult !== 'success' && (
           <form
-            onSubmit={this.onSubmit}
+
           >
             <textarea
               placeholder="Suggest hot news!"
@@ -65,7 +66,7 @@ export default class FeedbackForm extends React.Component {
               value={text}
               onChange={this.onChange}
             />
-            <button disabled={!text}>
+            <button disabled={!text} onSubmit={this.onSubmit}>
               Submit
             </button>
           </form>

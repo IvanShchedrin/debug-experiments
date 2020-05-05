@@ -54,6 +54,7 @@ class ParallaxHeader extends React.PureComponent {
           </h3>
         </div>
         <button
+          id={'scroll-to-anchor'}
           className="header-arrow"
           onClick={this.onArrowClick}
         >
