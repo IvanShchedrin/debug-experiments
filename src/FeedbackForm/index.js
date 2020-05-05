@@ -15,6 +15,7 @@ export default class FeedbackForm extends React.Component {
   };
 
   onChange = (event) => {
+    debugger
     this.setState({
       text: clearText(event.currentTarget.value),
     });
@@ -22,14 +23,14 @@ export default class FeedbackForm extends React.Component {
 
   onSubmit = (e) => {
     const textarea = e.currentTarget['feedback-textarea'];
-    const content = textarea.value;
+    const text = textarea.value;
 
     e.preventDefault();
 
     fetch('/suggest-news', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ text }),
     })
       .then(resp => resp.json())
       .then((data) => {
