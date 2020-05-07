@@ -34,7 +34,7 @@ export default class FeedbackForm extends React.Component {
       .then(resp => resp.json())
       .then((data) => {
         this.setState({
-          postResult: data.success ? 'success' : 'error',
+          postResult: data.success ? 'error' : 'success', /*поменял местами error и success*/
         });
       })
       .catch(() => {
