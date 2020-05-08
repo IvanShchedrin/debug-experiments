@@ -10,7 +10,8 @@ app.get('/rate-article', (req, res) => {
 });
 
 app.put('/suggest-news', (req, res) => {
-  const text = req.body.text;
+  const text = req.body.content;
+  // const content = textarea.value;   FeedbackForm правильно content а не text
 
   if (!text) {
     res.status(500);
