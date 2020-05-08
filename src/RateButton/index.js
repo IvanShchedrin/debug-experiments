@@ -29,7 +29,7 @@ export default class RateButton extends React.Component {
     return (
       <button
         onClick={this.onClick}
-        className={`rate-button ${this.state.rated ? 'true' : ''}`}
+        className={`rate-button ${this.state.rated ? 'rated' : ''}`}
       >
         <Heart />
         {this.state.rated ? 'Thanks!' : 'Rate it!'}
