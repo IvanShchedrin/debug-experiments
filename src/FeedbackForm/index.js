@@ -10,26 +10,26 @@ const resultTexts = {
 
 export default class FeedbackForm extends React.Component {
   state = {
-    text: '',
+    content: '',
     postResult: null,
   };
 
   onChange = (event) => {
     this.setState({
-      text: clearText(event.currentTarget.value),
+      content: clearText(event.currentTarget.value),
     });
   };
 
   onSubmit = (e) => {
     const textarea = e.currentTarget['feedback-textarea'];
-    const content = textarea.value;
+    const text = textarea.value;
 
     e.preventDefault();
 
     fetch('/suggest-news', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ text }),
     })
       .then(resp => resp.json())
       .then((data) => {
@@ -45,7 +45,7 @@ export default class FeedbackForm extends React.Component {
   };
 
   render() {
-    const { text, postResult } = this.state;
+    const { content, postResult } = this.state;
 
     return (
       <section className="feedback-form">
@@ -62,10 +62,10 @@ export default class FeedbackForm extends React.Component {
               placeholder="Suggest hot news!"
               className="feedback-textarea"
               id="feedback-textarea"
-              value={text}
+              value={content}
               onChange={this.onChange}
             />
-            <button disabled={!text}>
+            <button disabled={!content}>
               Submit
             </button>
           </form>
