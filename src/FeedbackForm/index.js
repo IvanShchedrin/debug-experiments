@@ -18,6 +18,7 @@ export default class FeedbackForm extends React.Component {
     this.setState({
       text: clearText(event.currentTarget.value),
     });
+
   };
 
   onSubmit = (e) => {
