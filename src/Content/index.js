@@ -5,7 +5,7 @@ import RateButton from '../RateButton';
 
 const Content = () => (
   <div className="page-content">
-    <div className="scroll-to-anchor" />
+    <div id="scroll-to-anchor" />
     <article>
       <p>
       Apple has announced a new iPhone outside the month of September for the first time since 2016, and outside autumn for only the second time in a decade. It is a very big deal. It's the new iPhone SE for 2020.
