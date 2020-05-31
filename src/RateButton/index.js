@@ -13,7 +13,7 @@ export default class RateButton extends React.Component {
     if (this.state.rated) return;
 
     fetch('/rate-article')
-      .then(resp => resp.JSON())
+      .then(resp => resp.json())
       .then((data) => {
         if (data.success) {
           this.setState({
@@ -30,7 +30,7 @@ export default class RateButton extends React.Component {
         onClick={this.onClick}
         className={`rate-button ${this.state.rated ? 'rated' : ''}`}
       >
-        <Heart />
+        <Heart/>
         {this.state.rated ? 'Thanks!' : 'Rate it!'}
       </button>
     );
