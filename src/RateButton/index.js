@@ -13,7 +13,7 @@ export default class RateButton extends React.Component {
     if (this.state.rated) return;
 
     fetch('/rate-article')
-      .then(resp => resp.JSON())
+      .then(resp => resp.json()) /*не совсем понял в чём именно ошибка, но изменил JSON на json и проблема устранилась*/
       .then((data) => {
         if (data.success) {
           this.setState({
