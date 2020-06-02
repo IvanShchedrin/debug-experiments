@@ -22,19 +22,19 @@ export default class FeedbackForm extends React.Component {
 
   onSubmit = (e) => {
     const textarea = e.currentTarget['feedback-textarea'];
-    const content = textarea.value;
+    const text = textarea.value; /*должен отправляться не content, а text, это ждёт сервер*/
 
     e.preventDefault();
 
     fetch('/suggest-news', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ text }), /*должен отправляться не content, а text, это ждёт сервер*/
     })
       .then(resp => resp.json())
       .then((data) => {
         this.setState({
-          postResult: data.success ? 'error' : 'success', /*поменял местами error и success*/
+          postResult: data.success ? 'success' : 'error',
         });
       })
       .catch(() => {

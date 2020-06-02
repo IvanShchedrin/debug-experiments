@@ -1,7 +1,7 @@
 import badWordsRegexp from 'badwords/regexp';
 
 export const clearText = (text) => (
-  text.replace(badWordsRegexp, function(word) { /*добавил function и return*/
+  text.replace(badWordsRegexp, (word) => { /*переделал в стрелочную функцию*/
     return '*'.repeat(word.length);
   })
 );
