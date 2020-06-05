@@ -4,10 +4,6 @@ import './index.css';
 
 import { ReactComponent as Arrow } from './arrow.svg';
 
-const freeze = (milliseconds) => {
-  const currentTime = new Date().getTime();
-  while (currentTime + milliseconds > new Date().getTime()) {}
-};
 
 class ParallaxHeader extends React.PureComponent {
   componentDidMount() {
@@ -26,12 +22,10 @@ class ParallaxHeader extends React.PureComponent {
     this.componentRef.style.backgroundPositionY = `${-top * 0.3}px`;
     this.contentRef.style.transform = `translateY(${-top * 0.5}px)`;
 
-    /* Here is something wrong... */
-    // freeze(300);
   };
 
   onArrowClick = () => {
-    document.querySelector('#scroll-to-anchor').scrollIntoView({
+    document.querySelector('.scroll-to-anchor').scrollIntoView({
       behavior: 'smooth',
     })
   };
